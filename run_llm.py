@@ -5,6 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 device = "mps" if torch.backends.mps.is_available() else "cpu"
 torch.set_default_device(device)
 
+#small model
 # Load a small model for testing (change to a larger one later)
 model_name = "deepseek-ai/deepseek-coder-1.3b-instruct"
 model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float32).to(device)
